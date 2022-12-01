@@ -34,6 +34,8 @@ LIBXXX_OBJS += \
 
 # cpp
 LIBXXX_OBJS += \
+							cppWrapper.cpp.o \
+							cppClass.cpp.o \
 							cppHelloWorld.cpp.o
 
 #** LIBXXX_yes **
@@ -102,7 +104,7 @@ TO_FOLDER =
 .SUFFIXES: .cpp .cpp.o .c .o
 
 .PHONY: all clean distclean install romfs
-all: $(CLEAN_BINS) $(CLEAN_LIBS)
+all: $(CONFIGURED) $(CLEAN_BINS) $(CLEAN_LIBS)
 
 %.o: %.c $(HEADER_FILES)
 	@echo 'Compiling file: $<'

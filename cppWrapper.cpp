@@ -12,29 +12,26 @@
  * KIND, either express or implied.
  *
  ***************************************************************************/
-#include <iostream>
+#include <stdio.h>
+#include <string>
+#include "cppClass.h"
 
-// a simple cpp
-// include here, we don't need to extern "C" in cpp
-#include "cppHelloWorld.h"
+#include "cppWrapper.h"
 
-#ifdef __cplusplus
-//extern "C" {
-#endif
-// include a area or one function
-// extern "C" int cppHelloWorld(void)
-
-using namespace std;
-
-int cppHelloWorld(void)
+void* createClass(char *name, int id)
 {
-	int ret = 0;
+	//std::string newname(name);
 
-	std::cout << "[cppHelloWorld] Hello world - CPP !!!\n";
-
-	return ret;
+	const std::string &newname = name;
+	return new Member(newname, id);
 }
 
-#ifdef __cplusplus
-//}
-#endif
+void freeClass(void* thiz) 
+{
+	delete static_cast<Member*>(thiz);
+}
+
+void whoAreyou(void* thiz)
+{
+	static_cast<Member*>(thiz)->whoAreyou();
+}

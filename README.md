@@ -34,7 +34,7 @@ flowchart LR
 $ make
 ```
 # 5. Example or Usage
-- cppCaller -
+- cCaller -
 ```bash
 $ ./cCaller
 [83069/83069] app_loop:48 - (pid: 0)
@@ -65,5 +65,7 @@ Run an example and read it.
 # I. Study
 - [Mixing C and C++ Code in the Same Program](https://www.oracle.com/technical-resources/articles/it-infrastructure/mixing-c-and-cplusplus.html)
 - [How to mix C and C++](https://isocpp.org/wiki/faq/mixing-c-and-cpp)
+- [make - 8.3 Functions for File Names](https://www.gnu.org/software/make/manual/html_node/File-Name-Functions.html)
+- [C 呼叫 C++ 函式的方法](http://www.huoschen.idv.tw/blog/programming/c-calling-c++-functions/)
 
 # II. Debug

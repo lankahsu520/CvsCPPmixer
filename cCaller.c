@@ -18,6 +18,9 @@
 #include "utilx9.h"
 
 #include "cppHelloWorld.h"
+#include "cppWrapper.h"
+
+//struct Member;
 
 #define TAG "demo_000"
 
@@ -47,7 +50,13 @@ static void app_loop(void)
 	int pid = pidof("demo_000");
 	DBG_ER_LN("(pid: %d)", pid);
 
+#if (1)
+	//CPP
 	cppHelloWorld();
+	void* lanka = createClass("lanka", 1);
+	whoAreyou(lanka);
+	freeClass(lanka);
+#endif
 
 	char payload[] = { 0xFF,0xFE,0x7B,0x22,0x75,0x73,0x65,0x72,0x22,0x3A,0x22,0x6C,0x61,0x6E,0x6B,0x61,0x22,0x7D,0xFF,0xFF};
 	unsigned short cksum = buf_cksum((unsigned short *)payload, 20);

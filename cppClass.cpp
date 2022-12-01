@@ -13,28 +13,29 @@
  *
  ***************************************************************************/
 #include <iostream>
-
-// a simple cpp
-// include here, we don't need to extern "C" in cpp
-#include "cppHelloWorld.h"
+#include "cppClass.h"
 
 #ifdef __cplusplus
-//extern "C" {
+extern "C" {
 #endif
 // include a area or one function
 // extern "C" int cppHelloWorld(void)
 
 using namespace std;
 
-int cppHelloWorld(void)
+Member::Member(string name, int id)
 {
-	int ret = 0;
-
-	std::cout << "[cppHelloWorld] Hello world - CPP !!!\n";
-
-	return ret;
+	memberid = id;
+	membername = name;
 }
 
+void Member::whoAreyou(void)
+{
+	std::cout << "[cppClass] My membername is " << membername << ".\n";
+}
+
+
+
 #ifdef __cplusplus
-//}
+}
 #endif
