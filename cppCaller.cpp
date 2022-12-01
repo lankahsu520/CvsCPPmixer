@@ -21,6 +21,40 @@
 
 using namespace std;
 
+static void *thread_handler(void *user)
+{
+	ThreadX_t *tidx_req = (ThreadX_t*)user;
+
+	threadx_detach(tidx_req);
+
+	int count = 0;
+	DBG_IF_LN("(count: %d)", count++);
+
+	while (threadx_isquit(tidx_req)==0)
+	{
+		if (threadx_ispause(tidx_req)==0)
+		{
+			if (count >= 6) break;
+			DBG_IF_LN("(name: %s, count: %d)", tidx_req->name, count++);
+			if (( count % 3) == 0)
+			{
+				DBG_IF_LN("wait 3 seconds ...");
+				threadx_timewait_simple(tidx_req, 3*1000);
+				//break;
+			}
+		}
+		else
+		{
+			threadx_wait_simple(tidx_req);
+		}
+	}
+
+	threadx_leave(tidx_req);
+	DBG_IF_LN(DBG_TXT_BYE_BYE);
+
+	return NULL;
+}
+
 int main(int argc, char** argv)
 {
 	cppHelloWorld();
@@ -35,6 +69,19 @@ int main(int argc, char** argv)
 	DBG_ER_LN("(cksum: %d)", cksum);
 	cksum = buff_crc16((const unsigned char *)payload, 20, 0xFFFF);
 	DBG_ER_LN("(cksum: %d)", cksum);
+
+	ThreadX_t tidx_data_A;
+	tidx_data_A.thread_cb = thread_handler;
+	tidx_data_A.data = (void *)&tidx_data_A;
+	threadx_init(&tidx_data_A, (char*)"thread_A");
+
+	while ( (threadx_isquit(&tidx_data_A)==0) )
+	{
+		// busy loop
+		sleep(1);
+	}
+
+	DBG_IF_LN(DBG_TXT_BYE_BYE);
 
 	return 0;
 }

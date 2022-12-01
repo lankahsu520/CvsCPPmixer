@@ -7,15 +7,26 @@ flowchart LR
 	cCaller[cCaller]
 	libutilx9.so[libutilx9.so]
 	libxxx.a[libxxx.a]
-
+	
+	subgraph libxxx.a
+		cppClass
+		cppWrapper
+	end
+	
 	cCaller <-.-> libutilx9.so
-	cCaller <-.-> libxxx.a
+	cCaller <-.-> cppWrapper
+	cppWrapper <--> cppClass
 ```
 ```mermaid
 flowchart LR
 	cppCaller[cppCaller]
 	libutilx9.so[libutilx9.so]
 	libxxx.a[libxxx.a]
+
+	subgraph libxxx.a
+		cppClass
+		cppWrapper
+	end
 
 	cppCaller <-.-> libutilx9.so
 	cppCaller <-.-> libxxx.a
