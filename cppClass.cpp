@@ -15,12 +15,6 @@
 #include <iostream>
 #include "cppClass.h"
 
-#ifdef __cplusplus
-extern "C" {
-#endif
-// include a area or one function
-// extern "C" int cppHelloWorld(void)
-
 using namespace std;
 
 Member::Member(string name, int id)
@@ -33,9 +27,3 @@ void Member::whoAreyou(void)
 {
 	std::cout << "[cppClass] My membername is " << membername << ".\n";
 }
-
-
-
-#ifdef __cplusplus
-}
-#endif

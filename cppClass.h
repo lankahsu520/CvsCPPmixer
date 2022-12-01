@@ -15,11 +15,7 @@
 #ifndef __CPP_CLASS_H__
 #define __CPP_CLASS_H__
 
-#ifdef __cplusplus
-extern "C" {
-#endif
-
-#include <string.h>
+//#include <string>
 
 using namespace std;
 
@@ -48,10 +44,5 @@ class Member
 //******************************************************************************
 //** function **
 //******************************************************************************
-
-
-#ifdef __cplusplus
-}
-#endif
 
 #endif
