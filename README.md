@@ -30,10 +30,16 @@ flowchart LR
 	subgraph libxxx.a
 		cppClass
 		cppWrapper
+		cppHelloWorld
+		cppHelloWorld_org
 	end
 
 	cppCaller <-.-> libutilx9.so
-	cppCaller <-.-> libxxx.a
+	cppCaller <-.-> cppHelloWorld
+	cppCaller <-.-> cppHelloWorld_org
+	cppCaller <-.-> cppClass
+	cppWrapper <--> cppClass
+	cppWrapper <--> cppHelloWorld_org
 ```
 
 # 2. Depend on
