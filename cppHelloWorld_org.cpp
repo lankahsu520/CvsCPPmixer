@@ -14,27 +14,15 @@
  ***************************************************************************/
 #include <iostream>
 
-// a simple cpp
-// include here, we don't need to extern "C" in cpp
-#include "cppHelloWorld.h"
-
-#ifdef __cplusplus
-//extern "C" {
-#endif
-// include a area or one function
-// extern "C" int cppHelloWorld(void)
+#include "cppHelloWorld_org.h"
 
 using namespace std;
 
-int cppHelloWorld(void)
+int cppHelloWorld_org(void)
 {
 	int ret = 0;
 
-	std::cout << "[cppHelloWorld] Hello world - CPP !!!\n";
+	std::cout << "[cppHelloWorld_org] Hello world - CPP !!!\n";
 
 	return ret;
 }
-
-#ifdef __cplusplus
-//}
-#endif

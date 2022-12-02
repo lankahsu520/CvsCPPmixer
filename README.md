@@ -11,11 +11,15 @@ flowchart LR
 	subgraph libxxx.a
 		cppClass
 		cppWrapper
+		cppHelloWorld
+		cppHelloWorld_org
 	end
 	
 	cCaller <-.-> libutilx9.so
 	cCaller <-.-> cppWrapper
+	cCaller <-.-> cppHelloWorld
 	cppWrapper <--> cppClass
+	cppWrapper <--> cppHelloWorld_org
 ```
 ```mermaid
 flowchart LR
@@ -48,20 +52,33 @@ $ make
 - cCaller -
 ```bash
 $ ./cCaller
-[83069/83069] app_loop:48 - (pid: 0)
-Hello world - CPP !!!
-[83069/83069] app_loop:54 - (cksum: 1398)
-[83069/83069] app_loop:56 - (cksum: 22044)
-[83069/83069] main:160 - Bye-Bye !!!
+[343717/343717] app_loop:56 - (pid: 0)
+[cppHelloWorld] Hello world - CPP !!!
+[cppHelloWorld_org] Hello world - CPP !!!
+[cppClass] My membername is lanka.
+[343717/343717] app_loop:75 - (cksum: 1398)
+[343717/343717] app_loop:77 - (cksum: 22044)
+[343717/343717] main:181 - Bye-Bye !!!
 ```
 
 - cppCaller -
 ```bash
 $ ./cppCaller
-./cppCaller
-Hello world - CPP !!!
-[83089/83089] main:16 - (cksum: 1398)
-[83089/83089] main:18 - (cksum: 22044)
+[cppHelloWorld] Hello world - CPP !!!
+[cppHelloWorld_org] Hello world - CPP !!!
+[cppClass] My membername is lanka.
+[343715/343715] main:86 - (cksum: 1398)
+[343715/343715] main:88 - (cksum: 22044)
+[343715/343716] thread_handler:43 - (count: 0)
+[343715/343716] thread_handler:50 - (name: thread_A, count: 1)
+[343715/343716] thread_handler:50 - (name: thread_A, count: 2)
+[343715/343716] thread_handler:53 - wait 3 seconds ...
+[343715/343716] thread_handler:50 - (name: thread_A, count: 3)
+[343715/343716] thread_handler:50 - (name: thread_A, count: 4)
+[343715/343716] thread_handler:50 - (name: thread_A, count: 5)
+[343715/343716] thread_handler:53 - wait 3 seconds ...
+[343715/343716] thread_handler:65 - Bye-Bye !!!
+[343715/343715] main:101 - Bye-Bye !!!
 ```
 
 # 6. License

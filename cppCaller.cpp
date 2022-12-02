@@ -16,8 +16,20 @@
 
 #include "utilx9.h"
 
+#define USE_CPP_HELLOWORLD
+#ifdef USE_CPP_HELLOWORLD
 #include "cppHelloWorld.h"
+#endif
+
+#define USE_CPP_HELLOWORLD_ORG
+#ifdef USE_CPP_HELLOWORLD_ORG
+#include "cppHelloWorld_org.h"
+#endif
+
+#define USE_CPP_WRAPPER
+#ifdef USE_CPP_WRAPPER
 #include "cppClass.h"
+#endif
 
 using namespace std;
 
@@ -57,11 +69,16 @@ static void *thread_handler(void *user)
 
 int main(int argc, char** argv)
 {
+#ifdef USE_CPP_HELLOWORLD
 	cppHelloWorld();
-
+#endif
+#ifdef USE_CPP_HELLOWORLD_ORG
+	cppHelloWorld_org();
+#endif
+#ifdef USE_CPP_WRAPPER
 	Member lanka("lanka", 1);
 	lanka.whoAreyou();
-
+#endif
 
 	// call C
 	unsigned char payload[] = { 0xFF,0xFE,0x7B,0x22,0x75,0x73,0x65,0x72,0x22,0x3A,0x22,0x6C,0x61,0x6E,0x6B,0x61,0x22,0x7D,0xFF,0xFF };

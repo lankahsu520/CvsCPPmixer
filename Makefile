@@ -34,9 +34,10 @@ LIBXXX_OBJS += \
 
 # cpp
 LIBXXX_OBJS += \
-							cppWrapper.cpp.o \
 							cppClass.cpp.o \
-							cppHelloWorld.cpp.o
+							cppHelloWorld.cpp.o \
+							cppHelloWorld_org.cpp.o \
+							cppWrapper.cpp.o
 
 #** LIBXXX_yes **
 ifneq ("$(LIBNAME_A)", "")

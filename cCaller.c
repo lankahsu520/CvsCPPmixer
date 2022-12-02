@@ -17,10 +17,15 @@
 
 #include "utilx9.h"
 
+#define USE_CPP_HELLOWORLD
+#ifdef USE_CPP_HELLOWORLD
 #include "cppHelloWorld.h"
-#include "cppWrapper.h"
+#endif
 
-//struct Member;
+#define USE_CPP_WRAPPER
+#ifdef USE_CPP_WRAPPER
+#include "cppWrapper.h"
+#endif
 
 #define TAG "demo_000"
 
@@ -50,9 +55,16 @@ static void app_loop(void)
 	int pid = pidof("demo_000");
 	DBG_ER_LN("(pid: %d)", pid);
 
-#if (1)
+#ifdef USE_CPP_HELLOWORLD
 	//CPP
 	cppHelloWorld();
+#endif
+
+#ifdef USE_CPP_WRAPPER
+	// cppWrapper -> cppHelloWorld_org
+	cppHelloWorld_org_wrapper();
+
+	// cppWrapper -> cppClass
 	void* lanka = createClass("lanka", 1);
 	whoAreyou(lanka);
 	freeClass(lanka);

@@ -14,9 +14,16 @@
  ***************************************************************************/
 #include <stdio.h>
 #include <string>
+
+#include "cppHelloWorld_org.h"
 #include "cppClass.h"
 
 #include "cppWrapper.h"
+
+int cppHelloWorld_org_wrapper(void)
+{
+	return cppHelloWorld_org();
+}
 
 void* createClass(char *name, int id)
 {

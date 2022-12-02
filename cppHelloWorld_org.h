@@ -12,12 +12,9 @@
  * KIND, either express or implied.
  *
  ***************************************************************************/
-#ifndef __CPP_WRAPPER_H__
-#define __CPP_WRAPPER_H__
+#ifndef __CPP_HELLO_WORLD_ORG_H__
+#define __CPP_HELLO_WORLD_ORG_H__
 
-#ifdef __cplusplus
-extern "C" {
-#endif
 
 //******************************************************************************
 //** include **
@@ -28,18 +25,12 @@ extern "C" {
 //** define **
 //******************************************************************************
 
+
 //******************************************************************************
 //** function **
 //******************************************************************************
-int cppHelloWorld_org_wrapper(void);
 
-void* createClass(char *name, int id);
-void freeClass(void* thiz);
-void whoAreyou(void* thiz);
+int cppHelloWorld_org(void);
 
-
-#ifdef __cplusplus
-}
-#endif
 
 #endif
