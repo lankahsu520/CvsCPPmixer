@@ -19,11 +19,11 @@ using namespace std;
 
 Member::Member(string name, int id)
 {
-	memberid = id;
-	membername = name;
+	m_id = id;
+	m_name = name;
 }
 
 void Member::whoAreyou(void)
 {
-	std::cout << "[cppClass] My membername is " << membername << ".\n";
+	std::cout << "[cppClass] My m_name is " << m_name << ".\n";
 }

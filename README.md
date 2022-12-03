@@ -98,8 +98,9 @@ Run an example and read it.
 
 # I. Study
 - [Mixing C and C++ Code in the Same Program](https://www.oracle.com/technical-resources/articles/it-infrastructure/mixing-c-and-cplusplus.html)
-- [How to mix C and C++](https://isocpp.org/wiki/faq/mixing-c-and-cpp)
+- ~~[How to mix C and C++](https://isocpp.org/wiki/faq/mixing-c-and-cpp)~~
 - [make - 8.3 Functions for File Names](https://www.gnu.org/software/make/manual/html_node/File-Name-Functions.html)
 - [C 呼叫 C++ 函式的方法](http://www.huoschen.idv.tw/blog/programming/c-calling-c++-functions/)
+- [name mangling](https://zh.wikipedia.org/zh-tw/名字修饰)
 
 # II. Debug

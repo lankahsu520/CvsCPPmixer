@@ -30,11 +30,11 @@ using namespace std;
 class Member
 {
 	private:
-		int age;
+		int m_age;
 
 	public:
-		int memberid;
-		string membername;
+		int m_id;
+		string m_name;
 
 		Member(string, int);
 		void whoAreyou(void);
