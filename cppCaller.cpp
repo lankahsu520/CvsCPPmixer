@@ -67,6 +67,19 @@ static void *thread_handler(void *user)
 	return NULL;
 }
 
+void poniter_learning(int x, int *pnum, int &rnum)
+{
+	DBG_IF_LN("(x: %d %p)", x, &x);
+
+	int &rx = x;
+	DBG_IF_LN("(rx: %d %p)", rx, &rx);
+
+	DBG_IF_LN("(pnum: %d %p)", *pnum, pnum);
+
+	DBG_IF_LN("(rnum: %d %p)", rnum, &rnum);
+
+}
+
 int main(int argc, char** argv)
 {
 #ifdef USE_CPP_HELLOWORLD
@@ -91,6 +104,12 @@ int main(int argc, char** argv)
 	tidx_data_A.thread_cb = thread_handler;
 	tidx_data_A.data = (void *)&tidx_data_A;
 	threadx_init(&tidx_data_A, (char*)"thread_A");
+
+	{
+ 		int num = 123;
+ 		DBG_IF_LN("(num: %d, &num: %p)", num, &num);
+		poniter_learning(num, &num, num);
+	}
 
 	while ( (threadx_isquit(&tidx_data_A)==0) )
 	{

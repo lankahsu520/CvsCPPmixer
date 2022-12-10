@@ -72,19 +72,25 @@ $ ./cCaller
 $ ./cppCaller
 [cppHelloWorld] Hello world - CPP !!!
 [cppHelloWorld_org] Hello world - CPP !!!
-[cppClass] My membername is lanka.
-[343715/343715] main:86 - (cksum: 1398)
-[343715/343715] main:88 - (cksum: 22044)
-[343715/343716] thread_handler:43 - (count: 0)
-[343715/343716] thread_handler:50 - (name: thread_A, count: 1)
-[343715/343716] thread_handler:50 - (name: thread_A, count: 2)
-[343715/343716] thread_handler:53 - wait 3 seconds ...
-[343715/343716] thread_handler:50 - (name: thread_A, count: 3)
-[343715/343716] thread_handler:50 - (name: thread_A, count: 4)
-[343715/343716] thread_handler:50 - (name: thread_A, count: 5)
-[343715/343716] thread_handler:53 - wait 3 seconds ...
-[343715/343716] thread_handler:65 - Bye-Bye !!!
-[343715/343715] main:101 - Bye-Bye !!!
+[cppClass] My m_name is lanka.
+[108082/108082] main:99 - (cksum: 1398)
+[108082/108082] main:101 - (cksum: 22044)
+[108082/108082] main:110 - (num: 123, &num: 0x7ffd50d3e28c)
+[108082/108082] poniter_learning:72 - (x: 123 0x7ffd50d3e23c)
+[108082/108082] poniter_learning:75 - (rx: 123 0x7ffd50d3e23c)
+[108082/108082] poniter_learning:77 - (pnum: 123 0x7ffd50d3e28c)
+[108082/108082] poniter_learning:79 - (rnum: 123 0x7ffd50d3e28c)
+[108082/108083] thread_handler:43 - (count: 0)
+[108082/108083] thread_handler:50 - (name: thread_A, count: 1)
+[108082/108083] thread_handler:50 - (name: thread_A, count: 2)
+[108082/108083] thread_handler:53 - wait 3 seconds ...
+[108082/108083] thread_handler:50 - (name: thread_A, count: 3)
+[108082/108083] thread_handler:50 - (name: thread_A, count: 4)
+[108082/108083] thread_handler:50 - (name: thread_A, count: 5)
+[108082/108083] thread_handler:53 - wait 3 seconds ...
+[108082/108083] thread_handler:65 - Bye-Bye !!!
+[108082/108082] main:120 - Bye-Bye !!!
+
 ```
 
 # 6. License
