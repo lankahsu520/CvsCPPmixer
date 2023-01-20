@@ -96,9 +96,33 @@ $ ./cppCaller
 # 6. License
 CvsCPPmixer is under the New BSD License (BSD-3-Clause).
 
-
 # 7. Documentation
-Run an example and read it.
+
+```mermaid
+flowchart LR
+	*.c([*.c])
+	*.cpp([*.cpp])
+	*.o([*.o]) 
+	*.cpp.o([.cpp.o]) 
+	*.a([*.a]) 
+	*.so([*.so])
+	binary([binary])
+
+	*.c --> |gcc| *.o
+	*.cpp --> |g++| *.cpp.o
+	
+	*.o --> |ar| *.a
+	*.cpp.o --> |ar| *.a
+
+	*.o --> |g++|*.so
+	*.cpp.o --> |g++|*.so
+	
+	*.o --> |g++|binary
+	*.cpp.o --> |g++|binary
+	*.a --> |g++|binary
+	*.so --> |g++|binary
+		
+```
 
 # Appendix
 
