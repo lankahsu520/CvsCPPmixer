@@ -120,7 +120,7 @@ flowchart LR
 	*.o --> |g++|binary
 	*.cpp.o --> |g++|binary
 	*.a --> |g++|binary
-	*.so --> |g++|binary
+	*.so ..-> |g++|binary
 		
 ```
 
