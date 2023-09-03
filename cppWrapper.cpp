@@ -33,7 +33,7 @@ void* createClass(char *name, int id)
 	return new Member(newname, id);
 }
 
-void freeClass(void* thiz) 
+void freeClass(void* thiz)
 {
 	delete static_cast<Member*>(thiz);
 }

@@ -46,9 +46,12 @@ static void *thread_handler(void *user)
 	{
 		if (threadx_ispause(tidx_req)==0)
 		{
-			if (count >= 6) break;
+			if (count >= 6)
+			{
+				break;
+			}
 			DBG_IF_LN("(name: %s, count: %d)", tidx_req->name, count++);
-			if (( count % 3) == 0)
+			if ((count % 3) == 0)
 			{
 				DBG_IF_LN("wait 3 seconds ...");
 				threadx_timewait_simple(tidx_req, 3*1000);
@@ -106,12 +109,12 @@ int main(int argc, char** argv)
 	threadx_init(&tidx_data_A, (char*)"thread_A");
 
 	{
- 		int num = 123;
- 		DBG_IF_LN("(num: %d, &num: %p)", num, &num);
+		int num = 123;
+		DBG_IF_LN("(num: %d, &num: %p)", num, &num);
 		poniter_learning(num, &num, num);
 	}
 
-	while ( (threadx_isquit(&tidx_data_A)==0) )
+	while ((threadx_isquit(&tidx_data_A)==0))
 	{
 		// busy loop
 		sleep(1);
