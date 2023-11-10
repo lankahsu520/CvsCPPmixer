@@ -14,7 +14,10 @@
  ***************************************************************************/
 #include <iostream>
 
+#define USE_UTILIX9
+#ifdef USE_UTILIX9
 #include "utilx9.h"
+#endif
 
 #define USE_CPP_HELLOWORLD
 #ifdef USE_CPP_HELLOWORLD
@@ -33,6 +36,7 @@
 
 using namespace std;
 
+#ifdef USE_UTILIX9
 static void *thread_handler(void *user)
 {
 	ThreadX_t *tidx_req = (ThreadX_t*)user;
@@ -82,6 +86,7 @@ void poniter_learning(int x, int *pnum, int &rnum)
 	DBG_IF_LN("(rnum: %d %p)", rnum, &rnum);
 
 }
+#endif
 
 int main(int argc, char** argv)
 {
@@ -96,6 +101,7 @@ int main(int argc, char** argv)
 	lanka.whoAreyou();
 #endif
 
+#ifdef USE_UTILIX9
 	// call C
 	unsigned char payload[] = { 0xFF,0xFE,0x7B,0x22,0x75,0x73,0x65,0x72,0x22,0x3A,0x22,0x6C,0x61,0x6E,0x6B,0x61,0x22,0x7D,0xFF,0xFF };
 	unsigned short cksum = buf_cksum((unsigned short *)payload, 20);
@@ -121,6 +127,7 @@ int main(int argc, char** argv)
 	}
 
 	DBG_IF_LN(DBG_TXT_BYE_BYE);
+#endif
 
 	return 0;
 }
