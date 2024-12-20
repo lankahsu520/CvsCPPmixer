@@ -1,6 +1,6 @@
 # 1. Overview
 
-CvsCPPmixer gives an example how to mix C and C++.
+> CvsCPPmixer gives an example how to mix C and C++.
 
 ```mermaid
 flowchart LR
@@ -43,7 +43,7 @@ flowchart LR
 ```
 
 # 2. Depend on
-- [utilx9](https://github.com/lankahsu520/utilx9)
+#### - [utilx9](https://github.com/lankahsu520/utilx9)
 
 # 3. Current Status
 
@@ -52,10 +52,16 @@ flowchart LR
 
 # 4. Build
 ```bash
+$ cd /work/codebase/lankahsu520/utilx9
+$ . confs/simple_x86.conf
+$ make; make install
+$ export LD_LIBRARY_PATH=`pwd`:$LD_LIBRARY_PATH
+
+$ cd /work/codebase/lankahsu520/CvsCPPmixer
 $ make
 ```
 # 5. Example or Usage
-- cCaller -
+#### - cCaller - c all cpp
 ```bash
 $ ./cCaller
 [343717/343717] app_loop:56 - (pid: 0)
@@ -67,7 +73,7 @@ $ ./cCaller
 [343717/343717] main:181 - Bye-Bye !!!
 ```
 
-- cppCaller -
+#### - cppCaller - cpp call c
 ```bash
 $ ./cppCaller
 [cppHelloWorld] Hello world - CPP !!!
@@ -94,7 +100,7 @@ $ ./cppCaller
 ```
 
 # 6. License
-CvsCPPmixer is under the New BSD License (BSD-3-Clause).
+> CvsCPPmixer is under the New BSD License (BSD-3-Clause).
 
 # 7. Documentation
 
