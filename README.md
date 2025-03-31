@@ -138,5 +138,6 @@ flowchart LR
 - [make - 8.3 Functions for File Names](https://www.gnu.org/software/make/manual/html_node/File-Name-Functions.html)
 - [C 呼叫 C++ 函式的方法](http://www.huoschen.idv.tw/blog/programming/c-calling-c++-functions/)
 - [name mangling](https://zh.wikipedia.org/zh-tw/名字修饰)
+- [C++项目文件组织一般形式](https://www.ansicheng.com/cpp/cpp-project-file-hierarchy-form)
 
 # II. Debug
